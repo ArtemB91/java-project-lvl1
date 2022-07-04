@@ -13,3 +13,6 @@ GCD:
 
 Progression:
 [![asciicast](https://asciinema.org/a/XuNLhDCqjDFKnJWjB2v7mWsMf.svg)](https://asciinema.org/a/XuNLhDCqjDFKnJWjB2v7mWsMf)
+
+Prime:
+[![asciicast](https://asciinema.org/a/1VsyGlmjOBiZJqMwH6mWYqQnN.svg)](https://asciinema.org/a/1VsyGlmjOBiZJqMwH6mWYqQnN)
