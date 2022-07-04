@@ -15,7 +15,7 @@ public class Even {
         int number = random.nextInt();
         String correctAnswer = (number % 2 == 0) ? "yes" : "no";
 
-        System.out.println("Question : " + number);
+        System.out.println("Question: " + number);
 
         String answer = scanner.nextLine();
 
