@@ -7,12 +7,14 @@ public class App {
     private static final int GREET_CHOISE = 1;
     private static final int EVEN_CHOISE = 2;
     private static final int CALC_CHOISE = 3;
+    private static final int GCD_CHOISE = 4;
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
@@ -29,6 +31,10 @@ public class App {
                 break;
             case CALC_CHOISE:
                 Engine.playGame(Engine.Game.CALC);
+                break;
+            case GCD_CHOISE:
+                Engine.playGame(Engine.Game.GCD);
+                break;
             default:
                 break;
         }

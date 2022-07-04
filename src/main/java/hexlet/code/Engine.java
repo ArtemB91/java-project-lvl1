@@ -2,12 +2,13 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
 
 public class Engine {
 
     private static final int NUMBER_OF_TRIES = 3;
     public enum Game {
-        EVEN, CALC
+        EVEN, CALC, GCD
     }
 
     public static void playGame(Game game) {
@@ -25,6 +26,10 @@ public class Engine {
                     break;
                 case CALC:
                     success = Calc.playRound();
+                    break;
+                case GCD:
+                    success = GCD.playRound();
+                    break;
                 default:
                     break;
             }
