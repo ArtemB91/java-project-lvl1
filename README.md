@@ -3,16 +3,21 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/7f35f6e035d0a0c57554/maintainability)](https://codeclimate.com/github/ArtemB91/java-project-lvl1/maintainability)
 
 Even:
+
 [![asciicast](https://asciinema.org/a/uxcPwXZG7a4iVWW6odicPTEOq.svg)](https://asciinema.org/a/uxcPwXZG7a4iVWW6odicPTEOq)
 
 Calculator:
+
 [![asciicast](https://asciinema.org/a/zx8KjbmN6CxHCSDrtYZgonuPN.svg)](https://asciinema.org/a/zx8KjbmN6CxHCSDrtYZgonuPN)
 
 GCD:
+
 [![asciicast](https://asciinema.org/a/RAFgGT33f86yuq1g9lbGx1K1r.svg)](https://asciinema.org/a/RAFgGT33f86yuq1g9lbGx1K1r)
 
 Progression:
+
 [![asciicast](https://asciinema.org/a/XuNLhDCqjDFKnJWjB2v7mWsMf.svg)](https://asciinema.org/a/XuNLhDCqjDFKnJWjB2v7mWsMf)
 
 Prime:
+
 [![asciicast](https://asciinema.org/a/1VsyGlmjOBiZJqMwH6mWYqQnN.svg)](https://asciinema.org/a/1VsyGlmjOBiZJqMwH6mWYqQnN)
