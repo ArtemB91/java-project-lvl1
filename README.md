@@ -7,3 +7,6 @@ Even:
 
 Calculator:
 [![asciicast](https://asciinema.org/a/zx8KjbmN6CxHCSDrtYZgonuPN.svg)](https://asciinema.org/a/zx8KjbmN6CxHCSDrtYZgonuPN)
+
+GCD:
+[![asciicast](https://asciinema.org/a/RAFgGT33f86yuq1g9lbGx1K1r.svg)](https://asciinema.org/a/RAFgGT33f86yuq1g9lbGx1K1r)
