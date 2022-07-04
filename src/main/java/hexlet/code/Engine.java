@@ -23,7 +23,7 @@ public class Engine {
             if (success) {
                 System.out.println("Correct!");
             } else {
-                System.out.println("Let's try again, " + Cli.getPlayerName());
+                System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
                 return;
             }
         }
