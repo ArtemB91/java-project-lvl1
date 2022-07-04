@@ -19,7 +19,7 @@ public class App {
                 Cli.greet();
                 break;
             case 2:
-                EvenGame.playEvenGame();
+                Engine.playGame(Engine.Game.EVEN);
                 break;
             default:
                 break;
