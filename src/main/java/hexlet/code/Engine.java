@@ -4,12 +4,13 @@ import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 public class Engine {
 
     private static final int NUMBER_OF_TRIES = 3;
     public enum Game {
-        EVEN, CALC, GCD, PROGRESSION
+        EVEN, CALC, GCD, PROGRESSION, PRIME
     }
 
     public static void playGame(Game game) {
@@ -33,6 +34,9 @@ public class Engine {
                     break;
                 case PROGRESSION:
                     success = Progression.playRound();
+                    break;
+                case PRIME:
+                    success = Prime.playRound();
                     break;
                 default:
                     break;

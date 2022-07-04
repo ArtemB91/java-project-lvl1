@@ -9,6 +9,7 @@ public class App {
     private static final int CALC_CHOISE = 3;
     private static final int GCD_CHOISE = 4;
     private static final int PROGRESSION_CHOISE = 5;
+    private static final int PRIME_CHOISE = 6;
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
@@ -17,6 +18,7 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
@@ -39,6 +41,9 @@ public class App {
                 break;
             case PROGRESSION_CHOISE:
                 Engine.playGame(Engine.Game.PROGRESSION);
+                break;
+            case PRIME_CHOISE:
+                Engine.playGame(Engine.Game.PRIME);
                 break;
             default:
                 break;
