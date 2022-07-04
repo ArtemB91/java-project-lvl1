@@ -10,3 +10,6 @@ Calculator:
 
 GCD:
 [![asciicast](https://asciinema.org/a/RAFgGT33f86yuq1g9lbGx1K1r.svg)](https://asciinema.org/a/RAFgGT33f86yuq1g9lbGx1K1r)
+
+Progression:
+[![asciicast](https://asciinema.org/a/XuNLhDCqjDFKnJWjB2v7mWsMf.svg)](https://asciinema.org/a/XuNLhDCqjDFKnJWjB2v7mWsMf)
