@@ -19,7 +19,12 @@ public class Even {
 
         String answer = scanner.nextLine();
 
-        return  answer.equalsIgnoreCase(correctAnswer);
+        if (answer.equalsIgnoreCase(correctAnswer)) {
+            return true;
+        } else {
+            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
+            return false;
+        }
     }
 
     public static void greet() {
