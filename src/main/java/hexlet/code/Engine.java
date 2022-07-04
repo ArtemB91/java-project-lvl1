@@ -1,12 +1,13 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 
 public class Engine {
 
     private static final int NUMBER_OF_TRIES = 3;
     public enum Game {
-        EVEN
+        EVEN, CALC
     }
 
     public static void playGame(Game game) {
@@ -22,6 +23,8 @@ public class Engine {
                 case EVEN:
                     success = Even.playRound();
                     break;
+                case CALC:
+                    success = Calc.playRound();
                 default:
                     break;
             }
