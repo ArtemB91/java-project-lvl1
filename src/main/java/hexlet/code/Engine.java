@@ -16,31 +16,9 @@ public class Engine {
     public static void playGame(Game game) {
         Cli.greet();
 
-        boolean success;
-
         for (int i = 0; i < NUMBER_OF_TRIES; i++) {
 
-            success = false;
-
-            switch (game) {
-                case EVEN:
-                    success = Even.playRound();
-                    break;
-                case CALC:
-                    success = Calc.playRound();
-                    break;
-                case GCD:
-                    success = GCD.playRound();
-                    break;
-                case PROGRESSION:
-                    success = Progression.playRound();
-                    break;
-                case PRIME:
-                    success = Prime.playRound();
-                    break;
-                default:
-                    break;
-            }
+            boolean success = playRound(game);
 
             if (success) {
                 System.out.println("Correct!");
@@ -49,7 +27,32 @@ public class Engine {
                 return;
             }
         }
-
         System.out.println("Congratulations, " + Cli.getPlayerName() + "!");
+    }
+
+    private static boolean playRound(Game game) {
+
+        boolean success = false;
+
+        switch (game) {
+            case EVEN:
+                success = Even.playRound();
+                break;
+            case CALC:
+                success = Calc.playRound();
+                break;
+            case GCD:
+                success = GCD.playRound();
+                break;
+            case PROGRESSION:
+                success = Progression.playRound();
+                break;
+            case PRIME:
+                success = Prime.playRound();
+                break;
+            default:
+                break;
+        }
+        return success;
     }
 }

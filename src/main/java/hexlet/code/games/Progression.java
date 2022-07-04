@@ -36,12 +36,12 @@ public class Progression {
         int answer = scanner.nextInt();
         int correctAnswer = numbers[indexOfMissingNumber];
 
-        if (answer == correctAnswer) {
-            return true;
-        } else {
+        if (answer != correctAnswer) {
             System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
             return false;
         }
+
+        return true;
 
     }
 
