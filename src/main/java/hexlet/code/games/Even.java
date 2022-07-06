@@ -1,41 +1,27 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
-import java.util.Scanner;
 
 public class Even {
 
-    public static boolean playRound() {
+    public static void start() {
 
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        String[] questions = new String[Engine.NUMBER_OF_ROUNDS];
+        String[] answers = new String[Engine.NUMBER_OF_ROUNDS];
 
-        Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int number = random.nextInt();
-        String correctAnswer = (number % 2 == 0) ? "yes" : "no";
-
-        System.out.println("Question: " + number);
-
-        String answer = scanner.nextLine();
-
-        if (answer.equalsIgnoreCase(correctAnswer)) {
-            return true;
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-            return false;
+        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
+            int number = random.nextInt();
+            questions[i] = "" + number;
+            answers[i] = (number % 2 == 0) ? "yes" : "no";
         }
-    }
 
-    public static void greet() {
-        Scanner scanner = new Scanner(System.in);
+        Engine.playGame(rules, questions, answers);
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-
-        String name = scanner.nextLine();
-
-        System.out.println("Hello, " + name + "!");
     }
 
 }

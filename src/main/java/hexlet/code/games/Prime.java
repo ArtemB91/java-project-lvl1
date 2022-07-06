@@ -1,35 +1,29 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
-import java.util.Scanner;
 
 public class Prime {
 
     private static final int MAX_NUMBER = 1000;
-    public static boolean playRound() {
 
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
+    public static void start() {
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String[] questions = new String[Engine.NUMBER_OF_ROUNDS];
+        String[] answers = new String[Engine.NUMBER_OF_ROUNDS];
         Random random = new Random();
-        int number = random.nextInt(MAX_NUMBER);
-        System.out.println("Question: " + number);
 
-        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
+            int number = random.nextInt(MAX_NUMBER);
 
-        String answer = scanner.nextLine();
-        String correctAnswer = isPrime(number) ? "yes" : "no";
-
-        if (answer.equalsIgnoreCase(correctAnswer)) {
-            return true;
-        } else {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-            return false;
+            questions[i] = "" + number;
+            answers[i] = isPrime(number) ? "yes" : "no";
         }
-
+        Engine.playGame(rules, questions, answers);
     }
 
     private static boolean isPrime(int number) {
-
         if (number == 0 || number == 1) {
             return false;
         }
@@ -40,7 +34,6 @@ public class Prime {
                 return false;
             }
         }
-
         return true;
     }
 }

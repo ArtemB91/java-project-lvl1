@@ -1,7 +1,8 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
-import java.util.Scanner;
 
 public class Progression {
 
@@ -9,40 +10,20 @@ public class Progression {
     private static final int MAX_STEP = 20;
     private static final int PROGRESSION_SIZE = 10;
 
-
-
-    public static boolean playRound() {
-
-        int[] numbers = generateProgression();
-
+    public static void start() {
+        String rules = "What number is missing in the progression?";
+        String[] questions = new String[Engine.NUMBER_OF_ROUNDS];
+        String[] answers = new String[Engine.NUMBER_OF_ROUNDS];
         Random random = new Random();
-        int indexOfMissingNumber = random.nextInt(numbers.length);
 
-        StringBuilder builder = new StringBuilder("Question: ");
-        for (int i = 0; i < numbers.length; i++) {
-            if (i == indexOfMissingNumber) {
-                builder.append(".. ");
-            } else {
-                builder.append(numbers[i]);
-                builder.append(" ");
-            }
+        for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
+            int[] numbers = generateProgression();
+            int indexOfMissingNumber = random.nextInt(numbers.length);
+
+            questions[i] = questionText(numbers, indexOfMissingNumber);
+            answers[i] = "" + numbers[indexOfMissingNumber];
         }
-
-        System.out.println("What number is missing in the progression?");
-        System.out.println(builder.toString());
-
-        Scanner scanner = new Scanner(System.in);
-
-        int answer = scanner.nextInt();
-        int correctAnswer = numbers[indexOfMissingNumber];
-
-        if (answer != correctAnswer) {
-            System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-            return false;
-        }
-
-        return true;
-
+        Engine.playGame(rules, questions, answers);
     }
 
     private static int[] generateProgression() {
@@ -58,5 +39,18 @@ public class Progression {
         }
 
         return numbers;
+    }
+
+    private static String questionText(int[] numbers, int indexOfMissingNumber) {
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < numbers.length; i++) {
+            if (i == indexOfMissingNumber) {
+                builder.append(".. ");
+            } else {
+                builder.append(numbers[i]);
+                builder.append(" ");
+            }
+        }
+        return builder.toString();
     }
 }

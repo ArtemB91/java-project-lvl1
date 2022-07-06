@@ -1,58 +1,34 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
-import hexlet.code.games.Prime;
+import java.util.Scanner;
 
 public class Engine {
+    public static final int NUMBER_OF_ROUNDS = 3;
+    public static void playGame(String rules, String[] questions, String[] answers) {
+        Scanner scanner = new Scanner(System.in);
 
-    private static final int NUMBER_OF_TRIES = 3;
-    public enum Game {
-        EVEN, CALC, GCD, PROGRESSION, PRIME
-    }
-
-    public static void playGame(Game game) {
         Cli.greet();
+        System.out.println(rules);
 
-        for (int i = 0; i < NUMBER_OF_TRIES; i++) {
+        for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {
+            String question = questions[i];
+            String correctAnswer = answers[i];
 
-            boolean success = playRound(game);
+            System.out.println("Question: " + question);
+            System.out.print("Your answer: ");
+            String userAnswer = scanner.nextLine();
 
-            if (success) {
-                System.out.println("Correct!");
-            } else {
+            if (!userAnswer.equalsIgnoreCase(correctAnswer)) {
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. "
+                        + "Correct answer was '" + correctAnswer + "'.");
                 System.out.println("Let's try again, " + Cli.getPlayerName() + "!");
+                scanner.close();
                 return;
             }
+            System.out.println("Correct!");
         }
         System.out.println("Congratulations, " + Cli.getPlayerName() + "!");
+        scanner.close();
     }
 
-    private static boolean playRound(Game game) {
-
-        boolean success = false;
-
-        switch (game) {
-            case EVEN:
-                success = Even.playRound();
-                break;
-            case CALC:
-                success = Calc.playRound();
-                break;
-            case GCD:
-                success = GCD.playRound();
-                break;
-            case PROGRESSION:
-                success = Progression.playRound();
-                break;
-            case PRIME:
-                success = Prime.playRound();
-                break;
-            default:
-                break;
-        }
-        return success;
-    }
 }

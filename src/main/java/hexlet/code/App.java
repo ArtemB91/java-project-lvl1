@@ -1,5 +1,11 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+
 import java.util.Scanner;
 
 public class App {
@@ -12,8 +18,14 @@ public class App {
     private static final int PRIME_CHOISE = 6;
 
     public static void main(String[] args) {
-
-        printMenu();
+        System.out.println("Please enter the game number and press Enter.");
+        System.out.println("1 - Greet");
+        System.out.println("2 - Even");
+        System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
+        System.out.println("0 - Exit");
 
         Scanner scanner = new Scanner(System.in);
         int choice = scanner.nextInt();
@@ -25,34 +37,24 @@ public class App {
                 Cli.greet();
                 break;
             case EVEN_CHOISE:
-                Engine.playGame(Engine.Game.EVEN);
+                Even.start();
                 break;
             case CALC_CHOISE:
-                Engine.playGame(Engine.Game.CALC);
+                Calc.start();
                 break;
             case GCD_CHOISE:
-                Engine.playGame(Engine.Game.GCD);
+                GCD.start();
                 break;
             case PROGRESSION_CHOISE:
-                Engine.playGame(Engine.Game.PROGRESSION);
+                Progression.start();
                 break;
             case PRIME_CHOISE:
-                Engine.playGame(Engine.Game.PRIME);
+                Prime.start();
                 break;
             default:
                 break;
         }
-
+        scanner.close();
     }
 
-    private static void printMenu() {
-        System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet");
-        System.out.println("2 - Even");
-        System.out.println("3 - Calc");
-        System.out.println("4 - GCD");
-        System.out.println("5 - Progression");
-        System.out.println("6 - Prime");
-        System.out.println("0 - Exit");
-    }
 }
