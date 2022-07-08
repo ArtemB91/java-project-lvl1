@@ -7,24 +7,23 @@ import java.util.Random;
 public class Prime {
 
     private static final int MAX_NUMBER = 1000;
+    private static String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void start() {
-        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-        String[] questions = new String[Engine.NUMBER_OF_ROUNDS];
-        String[] answers = new String[Engine.NUMBER_OF_ROUNDS];
+        String[][] questionsAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
         Random random = new Random();
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
             int number = random.nextInt(MAX_NUMBER);
 
-            questions[i] = "" + number;
-            answers[i] = isPrime(number) ? "yes" : "no";
+            questionsAnswers[i][0] = String.valueOf(number);
+            questionsAnswers[i][1] = isPrime(number) ? "yes" : "no";
         }
-        Engine.playGame(rules, questions, answers);
+        Engine.playGame(rules, questionsAnswers);
     }
 
     private static boolean isPrime(int number) {
-        if (number == 0 || number == 1) {
+        if (number <= 1) {
             return false;
         }
 

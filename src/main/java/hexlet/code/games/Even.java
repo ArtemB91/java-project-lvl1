@@ -2,26 +2,23 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
 
 public class Even {
+    private static final int MAX_NUMBER = 1000;
+    private static String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void start() {
-
-        String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[] questions = new String[Engine.NUMBER_OF_ROUNDS];
-        String[] answers = new String[Engine.NUMBER_OF_ROUNDS];
-
-        Random random = new Random();
+        String[][] questionsAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int number = random.nextInt();
-            questions[i] = "" + number;
-            answers[i] = (number % 2 == 0) ? "yes" : "no";
+            int number = Utils.getRandomInt(MAX_NUMBER);
+            questionsAnswers[i][0] = String.valueOf(number);
+            questionsAnswers[i][1] = (isEven(number)) ? "yes" : "no";
         }
-
-        Engine.playGame(rules, questions, answers);
-
+        Engine.playGame(rules, questionsAnswers);
     }
 
+    private static boolean isEven(int number) {
+        return (number % 2 == 0);
+    }
 }

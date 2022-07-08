@@ -2,42 +2,37 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
-
 public class Progression {
 
     private static final int MAX_START_VALUE = 50;
     private static final int MAX_STEP = 20;
-    private static final int PROGRESSION_SIZE = 10;
+    private static final int MIN_PROGRESSION_SIZE = 5;
+    private static final int MAX_PROGRESSION_SIZE = 20;
+    private static String rules = "What number is missing in the progression?";
 
     public static void start() {
-        String rules = "What number is missing in the progression?";
-        String[] questions = new String[Engine.NUMBER_OF_ROUNDS];
-        String[] answers = new String[Engine.NUMBER_OF_ROUNDS];
-        Random random = new Random();
+        String[][] questionsAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int[] numbers = generateProgression();
-            int indexOfMissingNumber = random.nextInt(numbers.length);
+            int firstElement = Utils.getRandomInt(MAX_START_VALUE);
+            int step = Utils.getRandomInt(MAX_STEP);
+            int size = Utils.getRandomInt(MIN_PROGRESSION_SIZE, MAX_PROGRESSION_SIZE);
 
-            questions[i] = questionText(numbers, indexOfMissingNumber);
-            answers[i] = "" + numbers[indexOfMissingNumber];
+            int[] numbers = generateProgression(firstElement, size, step);
+            int indexOfMissingNumber = Utils.getRandomInt(numbers.length);
+
+            questionsAnswers[i][0] = questionText(numbers, indexOfMissingNumber);
+            questionsAnswers[i][1] = String.valueOf(numbers[indexOfMissingNumber]);
         }
-        Engine.playGame(rules, questions, answers);
+        Engine.playGame(rules, questionsAnswers);
     }
 
-    private static int[] generateProgression() {
-        int[] numbers = new int[PROGRESSION_SIZE];
+    private static int[] generateProgression(int firstElement, int size, int step) {
+        int[] numbers = new int[size];
 
-        Random random = new Random();
-
-        int step = random.nextInt(MAX_STEP);
-        numbers[0] = random.nextInt(MAX_START_VALUE);
-
-        for (int i = 1; i < PROGRESSION_SIZE; i++) {
-            numbers[i] = numbers[i - 1] + step;
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = firstElement + step * i;
         }
-
         return numbers;
     }
 

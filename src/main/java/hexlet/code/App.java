@@ -16,6 +16,8 @@ public class App {
     private static final int GCD_CHOISE = 4;
     private static final int PROGRESSION_CHOISE = 5;
     private static final int PRIME_CHOISE = 6;
+    private static final int EXIT_CHOISE = 0;
+
 
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
@@ -51,7 +53,10 @@ public class App {
             case PRIME_CHOISE:
                 Prime.start();
                 break;
+            case EXIT_CHOISE:
+                break;
             default:
+                System.out.println("You entered the wrong number");
                 break;
         }
         scanner.close();
