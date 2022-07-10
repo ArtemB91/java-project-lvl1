@@ -4,23 +4,16 @@ import java.util.Scanner;
 
 public class Engine {
     public static final int NUMBER_OF_ROUNDS = 3;
-    private static String playerName;
-    public static void greet() {
+    public static void playGame(String rules, String[][]questionsAnswers) {
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
 
-        String name = scanner.nextLine();
-        playerName = name;
+        String playerName = scanner.nextLine();
 
-        System.out.println("Hello, " + name + "!");
-    }
-    public static void playGame(String rules, String[][]questionsAnswers) {
-
-        Scanner scanner = new Scanner(System.in);
-
-        greet();
+        System.out.println("Hello, " + playerName + "!");
         System.out.println(rules);
 
         for (int i = 0; i < NUMBER_OF_ROUNDS; i++) {

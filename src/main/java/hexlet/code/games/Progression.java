@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class Progression {
 
@@ -14,12 +15,12 @@ public class Progression {
         String[][] questionsAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int firstElement = Utils.getRandomInt(MAX_START_VALUE);
-            int step = Utils.getRandomInt(MAX_STEP);
+            int firstElement = Utils.getRandomInt(0, MAX_START_VALUE);
+            int step = Utils.getRandomInt(0, MAX_STEP);
             int size = Utils.getRandomInt(MIN_PROGRESSION_SIZE, MAX_PROGRESSION_SIZE);
 
             int[] numbers = generateProgression(firstElement, size, step);
-            int indexOfMissingNumber = Utils.getRandomInt(numbers.length);
+            int indexOfMissingNumber = Utils.getRandomInt(0, numbers.length);
 
             questionsAnswers[i][0] = questionText(numbers, indexOfMissingNumber);
             questionsAnswers[i][1] = String.valueOf(numbers[indexOfMissingNumber]);

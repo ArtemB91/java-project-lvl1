@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 public class Calc {
@@ -13,9 +14,9 @@ public class Calc {
         String[][] questionsAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int number1 = Utils.getRandomInt(MAX_NUMBER);
-            int number2 = Utils.getRandomInt(MAX_NUMBER);
-            String operation = OPERATION_TYPES[Utils.getRandomInt(OPERATION_TYPES.length)];
+            int number1 = Utils.getRandomInt(0, MAX_NUMBER);
+            int number2 = Utils.getRandomInt(0, MAX_NUMBER);
+            String operation = OPERATION_TYPES[Utils.getRandomInt(0, OPERATION_TYPES.length)];
 
             questionsAnswers[i][0] = number1 + " " + operation + " " + number2;
             questionsAnswers[i][1] = String.valueOf(calculate(number1, number2, operation));
@@ -33,7 +34,7 @@ public class Calc {
             case "*":
                 return number1 * number2;
             default:
-                throw new RuntimeException("Invalid operation! Operation should be +, - or *");
+                throw new RuntimeException("'" + operation + "' is invalid operation! Operation should be +, - or *");
         }
     }
 

@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 
 public class GCD {
@@ -11,8 +12,8 @@ public class GCD {
         String[][] questionsAnswers = new String[Engine.NUMBER_OF_ROUNDS][2];
 
         for (int i = 0; i < Engine.NUMBER_OF_ROUNDS; i++) {
-            int number1 = Utils.getRandomInt(MAX_NUMBER);
-            int number2 = Utils.getRandomInt(MAX_NUMBER);
+            int number1 = Utils.getRandomInt(0, MAX_NUMBER);
+            int number2 = Utils.getRandomInt(0, MAX_NUMBER);
 
             questionsAnswers[i][0] = number1 + " " + number2;
             questionsAnswers[i][1] = String.valueOf(calcGcd(number1, number2));
